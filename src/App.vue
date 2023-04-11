@@ -24,7 +24,7 @@ export default {
             id: 2,
             price: 200,
             duration: 2592000,
-            off: 0,
+            off: 10,
             is_selected: false,
           },
           {

@@ -14,7 +14,7 @@ export default {
   
     return {
       i: 2,
-      // newSubs: null,
+      
     };
 
   },
