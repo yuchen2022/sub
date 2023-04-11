@@ -5,27 +5,20 @@
     duration :
     {{ durTime }} days
   </button>
-
 </template>
 <script>
 export default {
-  props:["newSubs"],
+  props: ["newSubs"],
   data() {
-  
     return {
       i: 2,
-      
     };
-
   },
- computed:{
-  durTime(){
-
-     let durTime = this.newSubs[this.i].duration
-     return durTime/3600/24;
-     
-  }
- }
- 
+  computed: {
+    durTime() {
+      let durTime = this.newSubs[this.i].duration;
+      return durTime / 3600 / 24;
+    },
+  },
 };
 </script>

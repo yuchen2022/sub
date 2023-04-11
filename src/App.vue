@@ -1,7 +1,11 @@
 <template>
   <div>
-    <SubscribeBox v-for="subscribe in subs" :boxNumber="i" :subs="subs.subscription_1" />
-   
+    <SubscribeBox
+      v-for="subscribe in subs"
+      :boxNumber="i"
+      :subs="subs.subscription_1"
+    />
+    <div>{{ boxNumber }}</div>
   </div>
 </template>
 <script>
@@ -10,7 +14,7 @@ import SubscribeBox from "./SubscribeBox.vue";
 export default {
   data() {
     return {
-      i:3,
+      i: 1,
       subs: {
         subscription_1: [
           {
@@ -24,14 +28,14 @@ export default {
             id: 2,
             price: 200,
             duration: 2592000,
-            off: 10,
+            off: 0,
             is_selected: false,
           },
           {
             id: 3,
             price: 300,
             duration: 31536000,
-            off: 0,
+            off: 10,
             is_selected: true,
           },
         ],
@@ -84,11 +88,10 @@ export default {
       },
     };
   },
-  computed:{
-  boxNumber(){
-  return i
-
-}
+  computed: {
+    boxNumber() {
+      console.log(this.subs.subscription_2[this.i]);
+    },
   },
   components: { SubscribeBox },
 };
