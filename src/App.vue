@@ -1,8 +1,7 @@
 <template>
-  <div class="flex">
-    <SubscribeBox :boxNumber="1" :subs="subs.subscription_1" />
-    <!-- <SubscribeBox :boxNumber="2" :subs="subs.subscription_2" />
-    <SubscribeBox :boxNumber="3" :subs="subs.subscription_3" /> -->
+  <div>
+    <SubscribeBox v-for="subscribe in subs" :boxNumber="1" :subs="subs.subscription_1" />
+   
   </div>
 </template>
 <script>

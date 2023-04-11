@@ -3,9 +3,9 @@
     
      <div class="text-purple-900 m-2 p-2 rounded-md shadow-md shadow-purple-200">
       <div class="relative font-semibold my-1">
-        price : {{ newSubs.price }}
+        price : {{ newSubs[i].price }}
       </div>
-      <span :class="{'hidden': newSubs.off == 0}" class="absolute top-3 left-16"
+      <span :class="{'hidden': newSubs[i].off == 0}" class="absolute top-3 left-16"
         ><svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -21,10 +21,10 @@
           />
         </svg>
       </span>
-      <div :class="{'hidden': newSubs.off == 0}" class="font-bold my-1 text-purple-900">
+      <div :class="{'hidden': newSubs[i].off == 0}" class="font-bold my-1 text-purple-900">
         off price :
         <span>{{ this.offPrice }}</span>
-        <span>{{ checking() }}</span>
+        <span>{{ checking }}</span>
       </div>
 
       
@@ -41,10 +41,10 @@ export default {
     };
 
   },
-methods:{
+computed:{
     checking()
     {
-        console.log("checking",this.newSubs[this.i].id)
+        console.log("checking",this.newSubs[this.i])
     }
 }
  

@@ -1,6 +1,6 @@
 <template>
   
-  <div class="shadow-md rounded-md p-10 pt-2 mt-10 h-96 flex flex-col  justify-center">
+  <div class="shadow-md rounded-md p-10 pt-2 mt-10 h-96 flex flex-col max-w-fit mx-auto justify-center">
    
     
     <div class="bg-purple-950 mb-4 text-white p-3 rounded-md">
@@ -8,9 +8,9 @@
       
     </div>
     <div class="flex" >
-      <SubBtn :newSubs="newSubs" @click="i=1" />
-      <SubBtn :newSubs="newSubs" @click="i=2"/>
-      <SubBtn :newSubs="newSubs" @click="i=3"/>
+
+      <SubBtn :newSubs="newSubs" v-for="subDuration in subs" />
+   
       
      
     </div>
