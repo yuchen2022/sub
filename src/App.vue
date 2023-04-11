@@ -1,6 +1,6 @@
 <template>
   <div>
-    <SubscribeBox v-for="subscribe in subs" :boxNumber="1" :subs="subs.subscription_1" />
+    <SubscribeBox v-for="subscribe in subs" :boxNumber="i" :subs="subs.subscription_1" />
    
   </div>
 </template>
@@ -10,6 +10,7 @@ import SubscribeBox from "./SubscribeBox.vue";
 export default {
   data() {
     return {
+      i:3,
       subs: {
         subscription_1: [
           {
@@ -82,6 +83,12 @@ export default {
         ],
       },
     };
+  },
+  computed:{
+  boxNumber(){
+  return i
+
+}
   },
   components: { SubscribeBox },
 };
