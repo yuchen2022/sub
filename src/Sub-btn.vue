@@ -1,6 +1,6 @@
 <template>
   <button
-    class="bg-fuchsia-200 rounded-lg whitespace-nowrap text-purple-800 shadow-md shadow-purple-500 px-2 font-semibold p-2 m-3"
+    class="bg-fuchsia-200 rounded-lg whitespace-nowrap text-purple-800 shadow-md shadow-purple-500 px-2 font-semibold p-2 m-3 focus:bg-purple-600 focus:text-purple-100"
   >
     duration :
     {{ durTime }} days

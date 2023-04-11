@@ -7,7 +7,7 @@
     <div class="flex">
       <SubBtn :newSubs="newSubs" v-for="subDuration in subs" />
     </div>
-
+    <div>test</div>
     <OffHandler :newSubs="newSubs" />
   </div>
 </template>
@@ -25,7 +25,7 @@ export default {
   },
   data() {
     return {
-      i: 3,
+      i: 1,
       newSubs: null,
     };
   },
