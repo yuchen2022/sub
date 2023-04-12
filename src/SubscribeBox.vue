@@ -2,13 +2,19 @@
   <div
     class="shadow-md rounded-md p-10 pt-2 mt-10 h-96 flex flex-col max-w-fit mx-auto justify-center"
   >
-    <HeaderBadge :newSubs="newSubs" />
+    <HeaderBadge :acitveData="acitveData" />
 
     <div class="flex">
-      <SubBtn :newSubs="newSubs" v-for="subDuration in subs" />
+      <SubBtn
+        :is_selected="subDuration.is_selected"
+        @activeDuration="(data) => (acitveData = data)"
+        :index="i + 1"
+        :newSubs="subDuration"
+        v-for="subDuration in subs"
+      />
     </div>
-    <div>test</div>
-    <OffHandler :newSubs="newSubs" />
+
+    <OffHandler :acitveData="acitveData" />
   </div>
 </template>
 <script>
@@ -25,6 +31,7 @@ export default {
   },
   data() {
     return {
+      acitveData: null,
       i: 1,
       newSubs: null,
     };
@@ -36,10 +43,14 @@ export default {
       return subs;
     }, {});
   },
-
+  watch: {
+    acitveData(val) {
+      console.log("from watcher: ", val);
+    },
+  },
   computed: {
     subHandler() {
-      let data = this.newSubs[this.i];
+      let data = this.newSubs;
 
       return data;
     },

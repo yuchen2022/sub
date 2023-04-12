@@ -1,10 +1,10 @@
 <template>
   <div class="text-purple-900 m-2 p-2 rounded-md shadow-md shadow-purple-200">
     <div class="relative font-semibold my-1 tracking-wider">
-      price : {{ newSubs[i].price }} $
+      price : {{ activeData?.price }} $
     </div>
     <span
-      :class="{ hidden: newSubs[i].off == 0 }"
+      :class="{ hidden: activeData?.off == 0 }"
       class="absolute top-4 left-16"
       ><svg
         xmlns="http://www.w3.org/2000/svg"
@@ -22,7 +22,7 @@
       </svg>
     </span>
     <div
-      :class="{ hidden: newSubs[i].off == 0 }"
+      :class="{ hidden: activeData?.off == 0 }"
       class="font-bold my-1 text-purple-900"
     >
       off price :
@@ -32,18 +32,14 @@
 </template>
 <script>
 export default {
-  props: ["newSubs"],
-  data() {
-    return {
-      i: 3,
-      offPrice: 10,
-    };
-  },
+  props: ["boxNumber", "newSubs", "acitveData"],
+
   computed: {
     updoPrice() {
-      let curentPrice = this.newSubs[this.i].price;
-      this.offPrice = (curentPrice * (100 - this.newSubs[this.i].off)) / 100;
-      return this.offPrice;
+      console.log(this.activeData);
+      // let curentPrice = this.activeData?.price;
+      // this.offPrice = (curentPrice * (100 - this.activeData?.off)) / 100;
+      // return this.offPrice;
     },
   },
 };

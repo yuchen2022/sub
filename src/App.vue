@@ -1,10 +1,6 @@
 <template>
   <div>
-    <SubscribeBox
-      v-for="subscribe in subs"
-      :boxNumber="i"
-      :subs="subs.subscription_1"
-    />
+    <SubscribeBox v-for="sub in subs" :boxNumber="i" :subs="sub" />
     <div>{{ boxNumber }}</div>
   </div>
 </template>
@@ -67,7 +63,7 @@ export default {
             id: 7,
             price: 700,
             duration: 86400,
-            off: 0,
+            off: 40,
             is_selected: false,
           },
           {
