@@ -14,7 +14,7 @@
       />
     </div>
 
-    <OffHandler :acitveData="acitveData" />
+    <OffHandler :selectedData="acitveData" />
   </div>
 </template>
 <script>

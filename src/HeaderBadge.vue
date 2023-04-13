@@ -1,6 +1,7 @@
 <template>
   <div class="flex justify-between mb-3">
     <div
+      v-show="acitveData?.off"
       class="bg-purple-200 p-2 rounded-md w-1/3 text-center text-lg shadow-md shadow-purple-400 font-extrabold text-purple-900"
     >
       off : {{ offPrice }} %
